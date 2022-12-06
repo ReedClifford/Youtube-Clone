@@ -4,13 +4,54 @@
 
 /* NAVBAR */
 .navbar {
-  @apply fixed w-full flex justify-between items-center backdrop-blur-sm bg-white/40 text-neutral-800
-    py-3 px-5 dark:bg-black/50 dark:text-neutral-400;
+  @apply fixed w-full flex shadow-sm shadow-slate-300 justify-between items-center backdrop-blur-sm bg-white/40 text-neutral-800
+    py-3 px-5 dark:bg-black/40 dark:text-neutral-400 dark:shadow-none;
 }
-
+.hamburgerContainer {
+  @apply h-10 w-10 p-2  flex justify-center   hover:bg-neutral-200
+  items-center hover:rounded-full hover:dark:bg-neutral-800 hover:duration-500 hover:ease-in-out;
+}
 .hamburger-menu {
-  @apply text-2xl cursor-pointer hover:text-neutral-200 duration-300 ease-in-out;
+  @apply text-3xl lg:text-2xl   cursor-pointer hover:text-neutral-600 dark:hover:text-neutral-300 duration-300 ease-in-out;
 }
 .searchBar {
-  @apply rounded-xl border text-neutral-900 border-neutral-500 dark:border-black dark:text-neutral-100 dark:bg-neutral-900 py-1 px-3 outline-none focus:shadow-md;
+  @apply rounded-2xl border text-neutral-900 relative border-neutral-300 sm:w-72 md:w-80 lg:w-96 
+  dark:text-neutral-300 dark:bg-black dark:border-neutral-800 py-1 px-3 outline-none focus:shadow-sm;
+}
+.toggleLightMode {
+  @apply cursor-pointer text-yellow-500 hover:text-yellow-300 duration-300 ease-in-out text-2xl;
+}
+.toggleDarkMode {
+  @apply cursor-pointer text-neutral-600 text-2xl hover:text-neutral-900 duration-300 ease-in-out;
+}
+
+/* SIDEBAR */
+.bluredBackground {
+  @apply backdrop-blur-sm fixed inset-0 z-30 h-full w-full bg-black/10;
+}
+.sideBar {
+  @apply bg-gradient-to-bl from-white to-neutral-100 fixed  scrollbar-hide top-0 min-h-screen  shadow-sm 
+  shadow-neutral-300 text-neutral-900 dark:from-black
+  dark:to-zinc-900  w-3/6 sm:w-2/6 md:w-3/12 lg:w-3/12 xl:w-2/12 z-50  dark:shadow-neutral-900;
+}
+.togglerContainer {
+  @apply flex justify-start items-center gap-8 py-3 px-6 text-neutral-900 dark:text-neutral-200;
+}
+
+.sideBarLinksContainer {
+  @apply flex flex-col  rounded-xl m-3  justify-center gap-0 text-base  font-normal items-start;
+}
+.sideBarExploreContainer {
+  @apply border-t text-base  font-normal  border-neutral-400 dark:border-neutral-900 flex flex-col justify-center
+    gap-0 p-4 items-center;
+}
+.sideBarLink {
+  @apply flex justify-start  gap-8 w-full rounded-xl  py-2 px-4 items-center duration-300 ease-in-out text-neutral-800 
+  hover:bg-neutral-200 hover:dark:bg-neutral-900 dark:text-neutral-300;
+}
+.sideBarFooter {
+  @apply border-t border-neutral-400 dark:border-neutral-900 flex flex-col justify-center text-xs gap-2 p-3 items-center;
+}
+.active {
+  @apply bg-neutral-200 dark:bg-neutral-900;
 }

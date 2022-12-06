@@ -3,34 +3,42 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
 import youtubeLogo from "../assets/youtubeLogo.png";
-import useDarkMode from "../hooks/useDarkMode";
+import SearchBar from "../components/SearchBar";
+import BurgerMenuContents from "../components/sidebar/BurgerMenuContents";
+import useToggle from "../hooks/useToggles";
 
 const Navbar = () => {
-  const { darkMode, toggle } = useDarkMode();
+  const { darkMode, toggleDarkMode, toggleBurgerMenu, activeHamburger } =
+    useToggle();
+
   return (
     <Fragment>
       <nav className="navbar">
-        <div className="flex items-center gap-5">
-          <GiHamburgerMenu className="hamburger-menu" />
+        <div className="flex items-center gap-3">
+          <div className="hamburgerContainer">
+            <GiHamburgerMenu
+              className="hamburger-menu"
+              onClick={toggleBurgerMenu}
+            />
+          </div>
           <Link to="/">
-            <img src={youtubeLogo} alt="logo" className="w-8" />
+            <img src={youtubeLogo} alt="logo" className="w-10" />
           </Link>
         </div>
-        <input className="searchBar " />
+
+        <div>
+          <SearchBar />
+        </div>
         <div>
           {darkMode ? (
-            <MdLightMode
-              onClick={toggle}
-              className="cursor-pointer text-yellow-500 hover:text-yellow-300 duration-300 ease-in-out text-2xl"
-            />
+            <MdLightMode onClick={toggleDarkMode} className="toggleLightMode" />
           ) : (
-            <MdDarkMode
-              onClick={toggle}
-              className="cursor-pointer text-neutral-600 text-2xl hover:text-neutral-900 duration-300 ease-in-out"
-            />
+            <MdDarkMode onClick={toggleDarkMode} className="toggleDarkMode" />
           )}
         </div>
       </nav>
+      {activeHamburger ? <BurgerMenuContents /> : null}
+
       <Outlet />
     </Fragment>
   );

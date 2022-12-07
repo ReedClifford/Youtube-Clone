@@ -4,7 +4,7 @@
 
 /* NAVBAR */
 .navbar {
-  @apply fixed w-full flex shadow-sm shadow-slate-300 justify-between items-center backdrop-blur-sm bg-white/40 text-neutral-800
+  @apply fixed w-full flex shadow-sm z-50 shadow-slate-300 justify-between items-center backdrop-blur-sm bg-white/40 text-neutral-800
     py-3 px-5 dark:bg-black/40 dark:text-neutral-400 dark:shadow-none;
 }
 .hamburgerContainer {

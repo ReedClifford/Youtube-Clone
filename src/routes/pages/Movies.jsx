@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import VideoCards from "../../components/VideoCards";
 import useYoutubeData from "../../hooks/useYoutubeData";
 import { fetchFromAPi } from "../../utilities/fetchData";
-const Home = () => {
-  const { input, youtubeData, handleData } = useYoutubeData();
+const Movies = () => {
+  const { youtubeData, handleData } = useYoutubeData();
 
   //refractor this ugly code
   useEffect(() => {
     const data = async () => {
-      const { items } = await fetchFromAPi(input);
+      const { items } = await fetchFromAPi("Movies");
       handleData(items);
       console.log(youtubeData);
     };
@@ -34,4 +34,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default Movies;

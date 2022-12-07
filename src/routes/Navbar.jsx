@@ -21,9 +21,14 @@ const Navbar = () => {
               onClick={toggleBurgerMenu}
             />
           </div>
-          <Link to="/">
-            <img src={youtubeLogo} alt="logo" className="w-10" />
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link to="/">
+              <img src={youtubeLogo} alt="logo" className="w-10" />
+            </Link>
+            <span className="font-semibold hidden md:block text-neutral-900 text-lg dark:text-neutral-200">
+              Youtube{" "}
+            </span>
+          </div>
         </div>
 
         <div>

@@ -65,14 +65,19 @@ const BurgerMenuContents = () => {
             <h1 className=" text-neutral-800 dark:text-neutral-300">Explore</h1>
           </div>
 
-          <SideBarLinks to="/education" onClick={toggleBurgerMenu}>
-            <FaGraduationCap />
-            <h3>Education</h3>
-          </SideBarLinks>
-
           <SideBarLinks to="/music" onClick={toggleBurgerMenu}>
             <IoMusicalNotesSharp />
             <h3>Music</h3>
+          </SideBarLinks>
+
+          <SideBarLinks to="/movies" onClick={toggleBurgerMenu}>
+            <MdMovie />
+            <h3>Movies</h3>
+          </SideBarLinks>
+
+          <SideBarLinks to="/education" onClick={toggleBurgerMenu}>
+            <FaGraduationCap />
+            <h3>Education</h3>
           </SideBarLinks>
 
           <SideBarLinks to="/gaming" onClick={toggleBurgerMenu}>
@@ -85,10 +90,6 @@ const BurgerMenuContents = () => {
             <h3>Sports</h3>
           </SideBarLinks>
 
-          <SideBarLinks to="/movies" onClick={toggleBurgerMenu}>
-            <MdMovie />
-            <h3>Movies</h3>
-          </SideBarLinks>
           <SideBarLinks to="/news" onClick={toggleBurgerMenu}>
             <ImNewspaper />
             <h3>News</h3>

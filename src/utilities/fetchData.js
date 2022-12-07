@@ -13,7 +13,7 @@ export const fetchFromAPi = async (search) => {
         order: "date",
       },
       headers: {
-        "X-RapidAPI-Key": "8c28eac14emsh49b5972a045d795p18e428jsn4e792d1f7044",
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
         "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
       },
     });

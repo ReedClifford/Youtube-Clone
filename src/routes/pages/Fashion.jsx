@@ -19,6 +19,7 @@ const Fashion = () => {
     return (
       <Fragment key={idx}>
         <VideoCards
+          vidId={item.id.videoId}
           title={title}
           img={thumbnails.medium.url}
           channel={channelTitle}

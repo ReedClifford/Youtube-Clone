@@ -23,3 +23,19 @@ export const fetchFromAPi = async (search) => {
     console.log(error);
   }
 };
+
+export const fetchRelatedVideos = async (vidId) => {
+  const { data } = await axios.get(BASE_URL, {
+    params: {
+      relatedToVideoId: vidId,
+      part: "id,snippet",
+      type: "video",
+      maxResults: "5",
+    },
+    headers: {
+      "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+      "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
+    },
+  });
+  return data;
+};

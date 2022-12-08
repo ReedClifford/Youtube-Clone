@@ -13,6 +13,7 @@ import Music from "./routes/pages/Music";
 import News from "./routes/pages/News";
 import Sports from "./routes/pages/Sports";
 import Tof from "./routes/pages/Tof";
+import VideoPlayer from "./routes/pages/VideoPlayer";
 
 const App = () => {
   const { darkMode } = useDarkMode();
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route index element={<Home />} />
+            <Route path="videoPlayer" element={<VideoPlayer />} />
             <Route path="coding" element={<Code />} />
             <Route path="dota" element={<Dota />} />
             <Route path="tof" element={<Tof />} />

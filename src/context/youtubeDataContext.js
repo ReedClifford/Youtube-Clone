@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useState } from "react";
 
 export const YoutubeDataContext = createContext();
 
@@ -9,7 +9,11 @@ export const YoutubeDataContextProvider = ({ children }) => {
   const handleData = (data) => {
     setYoutubeData(data);
   };
-  const values = { input, setInput, youtubeData, handleData };
+
+  const stableHandleData = useCallback(handleData, []);
+  const stableInput = useCallback(input, [input]);
+
+  const values = { setInput, youtubeData, stableHandleData, stableInput };
 
   return (
     <YoutubeDataContext.Provider value={values}>

@@ -1,28 +1,29 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import VideoCards from "../../components/VideoCards";
 import useYoutubeData from "../../hooks/useYoutubeData";
 import { fetchFromAPi } from "../../utilities/fetchData";
 const Home = () => {
-  const { input, youtubeData, handleData } = useYoutubeData();
+  const { stableInput, youtubeData, stableHandleData } = useYoutubeData();
 
   //refractor this ugly code
   useEffect(() => {
     const data = async () => {
-      const { items } = await fetchFromAPi(input);
-      handleData(items);
-      console.log(youtubeData);
+      const { items } = await fetchFromAPi(stableInput);
+      stableHandleData(items);
     };
     data();
-  }, []);
+  }, [stableHandleData, stableInput]);
 
-  const renderedVideos = youtubeData.map((item) => {
+  const renderedVideos = youtubeData.map((item, idx) => {
     const { thumbnails, title, channelTitle } = item.snippet;
     return (
-      <VideoCards
-        title={title}
-        img={thumbnails.medium.url}
-        channel={channelTitle}
-      />
+      <Fragment key={idx}>
+        <VideoCards
+          title={title}
+          img={thumbnails.medium.url}
+          channel={channelTitle}
+        />
+      </Fragment>
     );
   });
 

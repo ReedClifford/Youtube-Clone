@@ -30,7 +30,6 @@ export const fetchRelatedVideos = async (vidId) => {
       relatedToVideoId: vidId,
       part: "id,snippet",
       type: "video",
-      maxResults: "5",
     },
     headers: {
       "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,

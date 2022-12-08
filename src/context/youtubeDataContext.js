@@ -8,9 +8,13 @@ export const YoutubeDataContextProvider = ({ children }) => {
   const [vidId, setVidId] = useState("");
   const [vidTitle, setVidTitle] = useState("");
   const [vidChannel, setVidChannel] = useState("");
+  const [relatedVideos, setRelatedVideos] = useState([]);
 
   const handleData = (data) => {
     setYoutubeData(data);
+  };
+  const handleRelatedVideos = (data) => {
+    setRelatedVideos(data);
   };
 
   const selectVideo = (current) => {
@@ -39,6 +43,8 @@ export const YoutubeDataContextProvider = ({ children }) => {
     vidChannel,
     videoChannel,
     currentVidTitle,
+    relatedVideos,
+    handleRelatedVideos,
   };
 
   return (

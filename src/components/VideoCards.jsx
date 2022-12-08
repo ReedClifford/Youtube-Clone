@@ -26,7 +26,7 @@ const VideoCards = ({ title, img, channel, vidId }) => {
         </div>
         <div className="flex flex-col gap-2 mt-2 p-4">
           <h1>{title}</h1>
-          <h1>{vidId}</h1>
+
           <p className="flex items-center gap-3 text-sm">
             {channel}
             <GoVerified />

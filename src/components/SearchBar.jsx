@@ -5,11 +5,18 @@ import useYoutubeData from "../hooks/useYoutubeData";
 const SearchBar = () => {
   const { setInput } = useYoutubeData();
   const [search, setSearch] = useState("");
+  const onTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const navigate = useNavigate();
   const onSubmit = (e) => {
     e.preventDefault();
     setInput(search);
     navigate("/");
+    onTop();
   };
   return (
     <div className="relative">
